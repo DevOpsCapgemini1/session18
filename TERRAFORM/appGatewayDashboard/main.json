@@ -1,0 +1,602 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appGatewayName": {
+      "type": "string"
+    },
+    "resourceGroupName": {
+      "type": "string"
+    },
+    "dashboardName": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "properties": {
+        "lenses": {
+          "0": {
+            "order": 0,
+            "parts": {
+              "0": {
+                "position": {
+                  "x": 0,
+                  "y": 0,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "TotalRequests",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Total Requests",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Sum Total Requests ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "1": {
+                "position": {
+                  "x": 6,
+                  "y": 0,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "FailedRequests",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Failed Requests",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Sum Failed Requests ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "2": {
+                "position": {
+                  "x": 12,
+                  "y": 0,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "HealthyHostCount",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Healthy Host Count",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "UnhealthyHostCount",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Unhealthy Host Count",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Healthy Host Count and Avg Unhealthy Host Count ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "3": {
+                "position": {
+                  "x": 0,
+                  "y": 4,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "Throughput",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Throughput",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Throughput ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "4": {
+                "position": {
+                  "x": 6,
+                  "y": 4,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "ApplicationGatewayTotalTime",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Application Gateway Total Time",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Application Gateway Total Time ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "5": {
+                "position": {
+                  "x": 12,
+                  "y": 4,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "BackendConnectTime",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Backend Connect Time",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Backend Connect Time ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "6": {
+                "position": {
+                  "x": 0,
+                  "y": 8,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "BackendFirstByteResponseTime",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Backend First Byte Response Time",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Backend First Byte Response Time ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "7": {
+                "position": {
+                  "x": 6,
+                  "y": 8,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Network/applicationGateways', parameters('appGatewayName'))]"
+                              },
+                              "name": "BackendLastByteResponseTime",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.network/applicationgateways",
+                              "metricVisualization": {
+                                "displayName": "Backend Last Byte Response Time",
+                                "resourceDisplayName": "[parameters('appGatewayName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Backend Last Byte Response Time ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "model": {
+            "timeRange": {
+              "value": {
+                "relative": {
+                  "duration": 24,
+                  "timeUnit": 1
+                }
+              },
+              "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+            },
+            "filterLocale": {
+              "value": "en-us"
+            },
+            "filters": {
+              "value": {
+                "MsPortalFx_TimeRange": {
+                  "model": {
+                    "format": "utc",
+                    "granularity": "auto",
+                    "relative": "24h"
+                  },
+                  "displayCache": {
+                    "name": "UTC Time",
+                    "value": "Past 24 hours"
+                  },
+                  "filteredPartIds": [
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c06355de",
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c06355f0",
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c06355fc",
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c0635608",
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c0635614",
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c0635620",
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c063562c",
+                    "StartboardPart-MonitorChartPart-2bd86aab-eebb-4a0e-9a73-f7f8c0635638"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "metadata": {},
+      "apiVersion": "2015-08-01-preview",
+      "type": "Microsoft.Portal/dashboards",
+      "name": "[parameters('dashboardName')]",
+      "location": "westus",
+      "tags": {
+        "hidden-title": "[parameters('dashboardName')]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appInsightsResource": {
+      "value": "myappinsight"
+    },
+    "tests": {
+      "value": [
+        {
+          "name": "5121",
+          "url": "http://www.microsoft.com",
+          "expected": 200,
+          "frequency_secs": 300,
+          "timeout_secs": 30,
+          "failedLocationCount": 1,
+          "description": "a description for test1",
+          "guid": "GEN-GUID",
+          "locations": [
+            {
+              "Id": "us-il-ch1-azr"
+            }
+          ]
+        },
+        {
+          "name": "1242",
+          "url": "http://www.microsoft.com",
+          "expected": 404,
+          "frequency_secs": 300,
+          "timeout_secs": 30,
+          "failedLocationCount": 1,
+          "description": "a description for test3",
+          "guid": "GEN-GUID",
+          "locations": [
+            {
+              "Id": "us-il-ch1-azr"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

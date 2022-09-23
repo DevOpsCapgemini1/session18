@@ -1,0 +1,535 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appServicePlanName": {
+      "type": "string"
+    },
+    "appName": {
+      "type": "string"
+    },
+    "resourceGroupName": {
+      "type": "string"
+    },
+    "dashboardName": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "properties": {
+        "lenses": {
+          "0": {
+            "order": 0,
+            "parts": {
+              "0": {
+                "position": {
+                  "x": 0,
+                  "y": 0,
+                  "colSpan": 5,
+                  "rowSpan": 3
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "Requests",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Requests",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            }
+                          ],
+                          "title": "Sum Requests ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "1": {
+                "position": {
+                  "x": 5,
+                  "y": 0,
+                  "colSpan": 5,
+                  "rowSpan": 3
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "HttpResponseTime",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Response Time",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "HttpResponseTime",
+                              "aggregationType": 3,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Response Time",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Response Time and Max Response Time ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "2": {
+                "position": {
+                  "x": 10,
+                  "y": 0,
+                  "colSpan": 5,
+                  "rowSpan": 3
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "RequestsInApplicationQueue",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Requests In Application Queue",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "RequestsInApplicationQueue",
+                              "aggregationType": 3,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Requests In Application Queue",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Requests In Application Queue and Max Requests In Application Queue ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "3": {
+                "position": {
+                  "x": 0,
+                  "y": 3,
+                  "colSpan": 5,
+                  "rowSpan": 3
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "CpuTime",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "CPU Time",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            }
+                          ],
+                          "title": "Sum CPU Time ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "4": {
+                "position": {
+                  "x": 5,
+                  "y": 3,
+                  "colSpan": 5,
+                  "rowSpan": 3
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "MemoryWorkingSet",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Memory working set",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "MemoryWorkingSet",
+                              "aggregationType": 3,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Memory working set",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Memory working set and Max Memory working set ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "5": {
+                "position": {
+                  "x": 10,
+                  "y": 3,
+                  "colSpan": 7,
+                  "rowSpan": 3
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "Http2xx",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Http 2xx",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "Http3xx",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Http 3xx",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "Http4xx",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Http 4xx",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/sites', parameters('appName'))]"
+                              },
+                              "name": "Http5xx",
+                              "aggregationType": 1,
+                              "namespace": "microsoft.web/sites",
+                              "metricVisualization": {
+                                "displayName": "Http Server Errors",
+                                "resourceDisplayName": "[parameters('appName')]"
+                              }
+                            }
+                          ],
+                          "title": "Sum Http 2xx, Sum Http 3xx, and 2 other metrics ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "model": {
+            "timeRange": {
+              "value": {
+                "relative": {
+                  "duration": 24,
+                  "timeUnit": 1
+                }
+              },
+              "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+            },
+            "filterLocale": {
+              "value": "en-us"
+            },
+            "filters": {
+              "value": {
+                "MsPortalFx_TimeRange": {
+                  "model": {
+                    "format": "utc",
+                    "granularity": "auto",
+                    "relative": "24h"
+                  },
+                  "displayCache": {
+                    "name": "UTC Time",
+                    "value": "Past 24 hours"
+                  },
+                  "filteredPartIds": [
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a888490d",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a888491f",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a888492b",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a8884937",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a8884943",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a888494f"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "metadata": {},
+      "apiVersion": "2015-08-01-preview",
+      "type": "Microsoft.Portal/dashboards",
+      "name": "[parameters('dashboardName')]",
+      "location": "westus",
+      "tags": {
+        "hidden-title": "[parameters('dashboardName')]"
+      }
+    }
+  ]
+}

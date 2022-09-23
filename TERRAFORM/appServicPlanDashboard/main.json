@@ -1,0 +1,378 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appServicePlanName": {
+      "type": "string"
+    },
+    "resourceGroupName": {
+      "type": "string"
+    },
+    "dashboardName": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "properties": {
+        "lenses": {
+          "0": {
+            "order": 0,
+            "parts": {
+              "0": {
+                "position": {
+                  "x": 0,
+                  "y": 0,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "CpuPercentage",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "CPU Percentage",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "CpuPercentage",
+                              "aggregationType": 3,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "CPU Percentage",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg CPU Percentage and Max CPU Percentage ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "1": {
+                "position": {
+                  "x": 6,
+                  "y": 0,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "MemoryPercentage",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "Memory Percentage",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "MemoryPercentage",
+                              "aggregationType": 3,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "Memory Percentage",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Memory Percentage and Max Memory Percentage ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "2": {
+                "position": {
+                  "x": 0,
+                  "y": 4,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "HttpQueueLength",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "Http Queue Length",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "HttpQueueLength",
+                              "aggregationType": 3,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "Http Queue Length",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Http Queue Length and Max Http Queue Length ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "3": {
+                "position": {
+                  "x": 6,
+                  "y": 4,
+                  "colSpan": 6,
+                  "rowSpan": 4
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "options",
+                      "isOptional": true
+                    },
+                    {
+                      "name": "sharedTimeRange",
+                      "isOptional": true
+                    }
+                  ],
+                  "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+                  "settings": {
+                    "content": {
+                      "options": {
+                        "chart": {
+                          "metrics": [
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "DiskQueueLength",
+                              "aggregationType": 4,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "Disk Queue Length",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            },
+                            {
+                              "resourceMetadata": {
+                                "id": "[resourceId(parameters('resourceGroupName'), 'Microsoft.Web/serverfarms', parameters('appServicePlanName'))]"
+                              },
+                              "name": "DiskQueueLength",
+                              "aggregationType": 3,
+                              "namespace": "microsoft.web/serverfarms",
+                              "metricVisualization": {
+                                "displayName": "Disk Queue Length",
+                                "resourceDisplayName": "[parameters('appServicePlanName')]"
+                              }
+                            }
+                          ],
+                          "title": "Avg Disk Queue Length and Max Disk Queue Length ",
+                          "titleKind": 1,
+                          "visualization": {
+                            "chartType": 2,
+                            "legendVisualization": {
+                              "isVisible": true,
+                              "position": 2,
+                              "hideSubtitle": false
+                            },
+                            "axisVisualization": {
+                              "x": {
+                                "isVisible": true,
+                                "axisType": 2
+                              },
+                              "y": {
+                                "isVisible": true,
+                                "axisType": 1
+                              }
+                            },
+                            "disablePinning": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "model": {
+            "timeRange": {
+              "value": {
+                "relative": {
+                  "duration": 24,
+                  "timeUnit": 1
+                }
+              },
+              "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+            },
+            "filterLocale": {
+              "value": "en-us"
+            },
+            "filters": {
+              "value": {
+                "MsPortalFx_TimeRange": {
+                  "model": {
+                    "format": "utc",
+                    "granularity": "auto",
+                    "relative": "24h"
+                  },
+                  "displayCache": {
+                    "name": "UTC Time",
+                    "value": "Past 24 hours"
+                  },
+                  "filteredPartIds": [
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a8884053",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a8884066",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a8884072",
+                    "StartboardPart-MonitorChartPart-2e9e516d-9e48-43a2-9f62-88e1a888407e"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "metadata": {},
+      "apiVersion": "2015-08-01-preview",
+      "type": "Microsoft.Portal/dashboards",
+      "name": "[parameters('dashboardName')]",
+      "location": "westus",
+      "tags": {
+        "hidden-title": "[parameters('dashboardName')]"
+      }
+    }
+  ]
+}
